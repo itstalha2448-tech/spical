@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Strawberry 🍓</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:"Segoe UI",sans-serif;
+    color:white;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body{
+    background:
+        radial-gradient(circle at 15% 15%,#ffc1df,transparent 30%),
+        radial-gradient(circle at 85% 80%,#ff75b2,transparent 35%),
+        linear-gradient(135deg,#ff9bca,#e85291,#c92768);
+}
+
+.background-glow{
+    position:fixed;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    filter:blur(80px);
+    animation:glowMove 10s infinite alternate ease-in-out;
+    pointer-events:none;
+}
+
+@keyframes glowMove{
+    0%{
+        transform:translate(-100px,-100px);
+    }
+    100%{
+        transform:translate(150px,100px);
+    }
+}
+
+/* =========================
+   PAGES
+========================= */
+
+.page{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:25px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:scale(1.05);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease,
+        visibility .8s;
+}
+
+.page.active{
+    opacity:1;
+    visibility:visible;
+    transform:scale(1);
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.card{
+    width:100%;
+    max-width:850px;
+
+    padding:50px 45px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.13);
+
+    border:1px solid rgba(255,255,255,.28);
+
+    border-radius:32px;
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 30px 80px rgba(90,0,40,.3),
+        inset 0 0 30px rgba(255,255,255,.05);
+
+    max-height:90vh;
+    overflow-y:auto;
+}
+
+.card::-webkit-scrollbar{
+    width:4px;
+}
+
+.card::-webkit-scrollbar-thumb{
+    background:rgba(255,255,255,.4);
+    border-radius:20px;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.small-title{
+    font-size:13px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+    opacity:.8;
+    margin-bottom:22px;
+}
+
+h1{
+    font-family:Georgia,serif;
+    font-size:clamp(42px,7vw,70px);
+    font-weight:400;
+    line-height:1.1;
+
+    text-shadow:0 5px 25px rgba(80,0,40,.3);
+
+    margin-bottom:20px;
+}
+
+h2{
+    font-family:Georgia,serif;
+    font-size:38px;
+    font-weight:400;
+    margin-bottom:20px;
+}
+
+.subtitle{
+    max-width:600px;
+    margin:auto;
+
+    font-family:Georgia,serif;
+
+    font-size:19px;
+    line-height:1.8;
+
+    opacity:.93;
+}
+
+.divider{
+    width:75px;
+    height:2px;
+
+    margin:28px auto;
+
+    background:rgba(255,255,255,.7);
+
+    border-radius:50px;
+}
+
+/* =========================
+   STRAWBERRY
+========================= */
+
+.big-strawberry{
+    font-size:70px;
+
+    display:inline-block;
+
+    animation:
+        strawberryFloat 3s infinite ease-in-out,
+        strawberryGlow 2s infinite alternate;
+}
+
+@keyframes strawberryFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(-5deg);
+    }
+
+    50%{
+        transform:translateY(-12px) rotate(5deg);
+    }
+}
+
+@keyframes strawberryGlow{
+
+    from{
+        filter:drop-shadow(0 0 5px rgba(255,255,255,.2));
+    }
+
+    to{
+        filter:drop-shadow(0 0 25px rgba(255,255,255,.5));
+    }
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+    display:inline-block;
+
+    margin-top:28px;
+
+    padding:14px 32px;
+
+    border-radius:50px;
+
+    border:1px solid rgba(255,255,255,.4);
+
+    background:rgba(255,255,255,.13);
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 10px 30px rgba(80,0,40,.18);
+}
+
+.btn:hover{
+    transform:translateY(-4px) scale(1.03);
+    background:rgba(255,255,255,.24);
+}
+
+/* =========================
+   PAGE 2
+========================= */
+
+.special-boxes{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+    margin-top:30px;
+}
+
+.special{
+    padding:22px 15px;
+
+    background:rgba(255,255,255,.09);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    transition:.3s;
+}
+
+.special:hover{
+    transform:translateY(-5px);
+
+    background:rgba(255,255,255,.16);
+}
+
+.special span{
+    display:block;
+
+    font-size:30px;
+
+    margin-bottom:10px;
+}
+
+.special h3{
+    font-family:Georgia,serif;
+
+    font-weight:400;
+
+    margin-bottom:7px;
+}
+
+.special p{
+    font-size:14px;
+
+    opacity:.8;
+
+    line-height:1.5;
+}
+
+/* =========================
+   PAGE 3 LETTER
+========================= */
+
+.letter{
+    text-align:left;
+
+    font-family:Georgia,serif;
+
+    font-size:17px;
+
+    line-height:1.9;
+}
+
+.letter p{
+    margin-bottom:22px;
+}
+
+.highlight{
+    font-weight:bold;
+
+    text-shadow:0 0 15px rgba(255,255,255,.3);
+}
+
+.signature{
+    text-align:center;
+
+    font-size:23px;
+
+    font-style:italic;
+
+    margin-top:30px;
+}
+
+/* =========================
+   PAGE 4
+========================= */
+
+.final-heart{
+    font-size:80px;
+
+    animation:
+        heartBeat 1.8s infinite,
+        finalGlow 2s infinite alternate;
+}
+
+@keyframes heartBeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+}
+
+@keyframes finalGlow{
+
+    from{
+        filter:drop-shadow(0 0 5px rgba(255,255,255,.2));
+    }
+
+    to{
+        filter:drop-shadow(0 0 30px rgba(255,255,255,.7));
+    }
+}
+
+.final-message{
+    font-family:Georgia,serif;
+
+    font-size:23px;
+
+    line-height:1.8;
+
+    max-width:650px;
+
+    margin:auto;
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-btn{
+    position:fixed;
+
+    top:20px;
+    right:20px;
+
+    z-index:100;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    background:rgba(255,255,255,.13);
+
+    color:white;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
+}
+
+.music-btn:hover{
+    transform:scale(1.1);
+}
+
+/* =========================
+   PAGE INDICATOR
+========================= */
+
+.page-count{
+    position:fixed;
+
+    bottom:20px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:20;
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
+    opacity:.7;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart{
+    position:fixed;
+
+    bottom:-50px;
+
+    z-index:1;
+
+    font-size:20px;
+
+    opacity:.45;
+
+    pointer-events:none;
+
+    animation:floatUp linear infinite;
+}
+
+@keyframes floatUp{
+
+    0%{
+        transform:translateY(0) rotate(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.5;
+    }
+
+    80%{
+        opacity:.4;
+    }
+
+    100%{
+        transform:translateY(-110vh) rotate(30deg);
+        opacity:0;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    .page{
+        padding:15px;
+    }
+
+    .card{
+        padding:35px 22px;
+        max-height:88vh;
+    }
+
+    .small-title{
+        font-size:10px;
+        letter-spacing:3px;
+    }
+
+    h1{
+        font-size:44px;
+    }
+
+    h2{
+        font-size:31px;
+    }
+
+    .subtitle{
+        font-size:16px;
+    }
+
+    .big-strawberry{
+        font-size:58px;
+    }
+
+    .special-boxes{
+        grid-template-columns:1fr;
+    }
+
+    .letter{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    .final-message{
+        font-size:18px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- Background -->
+<div class="background-glow"></div>
+
+
+<!-- =========================
+     MUSIC
+========================= -->
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()" id="musicBtn">
+    🔇
+</button>
+
+
+<!-- =========================
+     PAGE 1
+========================= -->
+
+<section class="page active" id="page1">
+
+    <div class="card">
+
+        <div class="small-title">
+            A little something for someone special
+        </div>
+
+        <div class="big-strawberry">
+            🍓
+        </div>
+
+        <h1>
+            I Made Something<br>
+            For You...
+        </h1>
+
+        <div class="divider"></div>
+
+        <p class="subtitle">
+
+            There’s someone who makes my ordinary days
+            feel a little more special.
+
+        </p>
+
+        <button class="btn" onclick="nextPage()">
+            Tap to Begin ✨
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 2
+========================= -->
+
+<section class="page" id="page2">
+
+    <div class="card">
+
+        <div class="small-title">
+            This one is for you
+        </div>
+
+        <div class="big-strawberry">
+            🍓
+        </div>
+
+        <h2>
+            For My Strawberry
+        </h2>
+
+        <p class="subtitle">
+
+            Some people become special without even trying.
+            They simply enter your life and somehow make
+            everything feel a little better.
+
+        </p>
+
+
+        <div class="special-boxes">
+
+            <div class="special">
+
+                <span>❤️</span>
+
+                <h3>Your Presence</h3>
+
+                <p>
+                    Somehow, just knowing you're there
+                    makes things feel better.
+                </p>
+
+            </div>
+
+
+            <div class="special">
+
+                <span>✨</span>
+
+                <h3>Your Smile</h3>
+
+                <p>
+                    One simple smile from you can
+                    completely change the mood.
+                </p>
+
+            </div>
+
+
+            <div class="special">
+
+                <span>💗</span>
+
+                <h3>Your Talks</h3>
+
+                <p>
+                    Even the simplest conversation
+                    with you feels special.
+                </p>
+
+            </div>
+
+
+            <div class="special">
+
+                <span>🌸</span>
+
+                <h3>Just You</h3>
+
+                <p>
+                    You don't have to do anything special.
+                    Being yourself is enough.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button class="btn" onclick="nextPage()">
+            There's Something I Want To Tell You 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 3
+========================= -->
+
+<section class="page" id="page3">
+
+    <div class="card">
+
+        <div class="small-title">
+            From my heart
+        </div>
+
+        <h2>
+            A Little Letter For You 💌
+        </h2>
+
+        <div class="divider"></div>
+
+
+        <div class="letter">
+
+            <p>
+                <strong>Strawberry,</strong>
+            </p>
+
+
+            <p>
+
+                Kabhi kabhi kisi insan ko explain karne ke liye
+                words kam par jate hain.
+                <span class="highlight">
+                    Aap mere liye bhi bilkul waisi hi hain.
+                </span>
+
+            </p>
+
+
+            <p>
+
+                Pata nahi aap mein aisi kya baat hai,
+                lekin aapse baat ho jaye to din acha lagne lagta hai,
+                aur agar aapse baat na ho to ajeeb sa sukoon nahi milta.
+                Aapki presence mere liye bohat special hai,
+                chahe hum sirf thori si baat karein ya bohat der tak.
+
+            </p>
+
+
+            <p>
+
+                Main shayad har baar perfect words mein nahi keh pata,
+                lekin ek baat hamesha dil mein hoti hai —
+                <span class="highlight">
+                    you really mean a lot to me.
+                </span>
+
+            </p>
+
+
+            <p>
+
+                Aap meri life ki woh special person hain
+                jinko main khona nahi chahta.
+                Aapki smile, aapki baatein, aapka simple sa hona…
+                sab kuch mere liye apni jagah bohat precious hai.
+
+            </p>
+
+
+            <p>
+
+                Is website ko maine sirf ek website ki tarah nahi banaya.
+                Ye meri taraf se aapke liye ek chota sa gift hai —
+                taake jab bhi aap ise dekhein,
+                aapko yaad aaye ke kahin koi aapko
+                <span class="highlight">
+                    dil se bohat special samajhta hai. ❤️
+                </span>
+
+            </p>
+
+
+            <div class="signature">
+
+                Stay the same, Strawberry. 🍓
+
+                <br><br>
+
+                Strawberry, you're genuinely one of the most
+                special people in my world. ❤️
+
+            </div>
+
+        </div>
+
+
+        <button class="btn" onclick="nextPage()">
+            One Last Thing... ✨
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 4
+========================= -->
+
+<section class="page" id="page4">
+
+    <div class="card">
+
+        <div class="small-title">
+            One last thing
+        </div>
+
+
+        <div class="final-heart">
+            ❤️
+        </div>
+
+
+        <h1>
+            You Are Special.
+        </h1>
+
+
+        <div class="divider"></div>
+
+
+        <p class="final-message">
+
+            And if you ever wonder how special you are to me...
+
+            <br><br>
+
+            More than words could ever explain.
+
+            <br><br>
+
+            This little world was made just for you,
+            <strong>Bittu.</strong>
+
+            🍓❤️
+
+        </p>
+
+
+        <button class="btn" onclick="restart()">
+            See It Again 🔄
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- Page Counter -->
+
+<div class="page-count" id="pageCount">
+    01 / 04
+</div>
+
+
+<!-- Floating Hearts -->
+
+<div class="floating-heart"
+     style="left:5%;animation-duration:9s;">
+    💗
+</div>
+
+<div class="floating-heart"
+     style="left:16%;animation-duration:12s;animation-delay:2s;">
+    ♡
+</div>
+
+<div class="floating-heart"
+     style="left:28%;animation-duration:10s;animation-delay:4s;">
+    💕
+</div>
+
+<div class="floating-heart"
+     style="left:42%;animation-duration:13s;animation-delay:1s;">
+    ♡
+</div>
+
+<div class="floating-heart"
+     style="left:57%;animation-duration:9s;animation-delay:3s;">
+    ❤️
+</div>
+
+<div class="floating-heart"
+     style="left:70%;animation-duration:12s;animation-delay:5s;">
+    💗
+</div>
+
+<div class="floating-heart"
+     style="left:84%;animation-duration:10s;animation-delay:2s;">
+    ♡
+</div>
+
+<div class="floating-heart"
+     style="left:94%;animation-duration:11s;animation-delay:4s;">
+    💕
+</div>
+
+
+<script>
+
+/* =========================
+   PAGE SYSTEM
+========================= */
+
+let currentPage = 1;
+
+const totalPages = 4;
+
+function showPage(pageNumber){
+
+    for(let i = 1; i <= totalPages; i++){
+
+        const page = document.getElementById("page" + i);
+
+        page.classList.remove("active");
+
+    }
+
+
+    document
+        .getElementById("page" + pageNumber)
+        .classList.add("active");
+
+
+    document.getElementById("pageCount").innerText =
+        String(pageNumber).padStart(2,"0")
+        + " / 04";
+
+
+    currentPage = pageNumber;
+
+}
+
+
+/* Next */
+
+function nextPage(){
+
+    if(currentPage < totalPages){
+
+        showPage(currentPage + 1);
+
+    }
+
+}
+
+
+/* Previous */
+
+function previousPage(){
+
+    if(currentPage > 1){
+
+        showPage(currentPage - 1);
+
+    }
+
+}
+
+
+/* Restart */
+
+function restart(){
+
+    showPage(1);
+
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+const music = document.getElementById("music");
+
+const musicBtn = document.getElementById("musicBtn");
+
+let musicPlaying = false;
+
+
+function toggleMusic(){
+
+    if(musicPlaying){
+
+        music.pause();
+
+        musicBtn.innerHTML = "🔇";
+
+        musicPlaying = false;
+
+    }
+
+    else{
+
+        music.volume = 0.25;
+
+        music.play()
+        .then(()=>{
+
+            musicBtn.innerHTML = "🎵";
+
+            musicPlaying = true;
+
+        })
+        .catch(()=>{
+
+            alert("Please click the music button again.");
+
+        });
+
+    }
+
+}
+
+
+/* Start music after first interaction */
+
+document.addEventListener("click",function startMusic(){
+
+    if(!musicPlaying){
+
+        music.volume = 0.25;
+
+        music.play()
+        .then(()=>{
+
+            musicBtn.innerHTML = "🎵";
+
+            musicPlaying = true;
+
+        })
+        .catch(()=>{});
+
+    }
+
+},{once:true});
+
+
+/* =========================
+   KEYBOARD NAVIGATION
+========================= */
+
+document.addEventListener("keydown",function(event){
+
+    if(event.key === "ArrowRight"){
+
+        nextPage();
+
+    }
+
+    if(event.key === "ArrowLeft"){
+
+        previousPage();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
